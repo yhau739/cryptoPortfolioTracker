@@ -58,7 +58,7 @@ The application uses **session-based authentication** to manage user state secur
 Here are the upcoming features and enhancements planned:
 
 ### 🔧 Backend
-- [ ] Add secure user registration and login
+- [x] Add secure user registration and login
 - [ ] Implement password hashing and salting
 - [ ] Store sessions in Redis for production scalability
 - [ ] Add API endpoints for:
