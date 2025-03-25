@@ -92,7 +92,7 @@
               "RelativeDocumentMoniker": "Controllers\\TransactionsController.cs",
               "ToolTip": "C:\\Users\\yeeha\\OneDrive\\Desktop\\DevCT\\cryptoPortfolioTracker\\backend\\Controllers\\TransactionsController.cs",
               "RelativeToolTip": "Controllers\\TransactionsController.cs",
-              "ViewState": "AgIAAIQAAAAAAAAAAAAAAJUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAAAIoAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-10T10:09:17.6Z",
               "EditorCaption": ""
@@ -167,7 +167,8 @@
               "RelativeToolTip": "Controllers\\UserController.cs",
               "ViewState": "AgIAAIAAAAAAAAAAAAAkwIoAAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T02:24:03.519Z"
+              "WhenOpened": "2025-03-11T02:24:03.519Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -203,7 +204,8 @@
               "RelativeToolTip": "Controllers\\BinanceController.cs",
               "ViewState": "AgIAADcAAAAAAAAAAAAIwA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T04:09:46.766Z"
+              "WhenOpened": "2025-03-11T04:09:46.766Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -263,7 +265,8 @@
               "RelativeToolTip": "Controllers\\PnlController.cs",
               "ViewState": "AgIAAF8AAAAAAAAAAAAUwKAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T03:53:32.152Z"
+              "WhenOpened": "2025-03-11T03:53:32.152Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
