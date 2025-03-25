@@ -53,6 +53,8 @@ export default function LoginForm() {
                     loading: "Logging in...",
                     success: (data) => {
                         if (data.success) {
+                            // set localstorage for sessionID
+                            localStorage.setItem("sessionId", data.sessionId);
                             setTimeout(() => router.push("/dashboard"), 1000); // Redirect after 1 seconds
                             return `Welcome back, ${username}!`
                         } else {

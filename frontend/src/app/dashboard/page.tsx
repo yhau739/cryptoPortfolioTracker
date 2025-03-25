@@ -23,13 +23,20 @@ import {
     TableRow,
 } from "@/components/ui/table";
 import Loading from '@/components/ui/loader';
+import AddTransactionFloatingBtn from "@/components/ui/addTxnFloatBtn";
+import { AddTransactionModal } from "@/components/custom/addTransactionModal";
+import { Toaster } from 'sonner';
 
 export default function DashboardPage() {
     const [isLoading, setIsLoading] = useState(true); // ✅ Add loading state
-    const priceChartRef = useRef<HTMLDivElement>(null);
-    const distributionChartRef = useRef<HTMLDivElement>(null);
     const [activeNav, setActiveNav] = useState('dashboard');
     const [isMenuOpen, setIsMenuOpen] = useState(true);
+
+    // referencing the HTML Components
+    const priceChartRef = useRef<HTMLDivElement>(null);
+    const distributionChartRef = useRef<HTMLDivElement>(null);
+
+    // Define transaction interface
     interface Transaction {
         id: number;
         type: string;
@@ -52,6 +59,7 @@ export default function DashboardPage() {
         bestPerformance: 0
     });
 
+    // initialize the btc price data constant
     const [btcPriceData, setBtcPriceData] = useState({ dates: [], prices: [] });
 
     // declare fn to update chart
@@ -100,13 +108,26 @@ export default function DashboardPage() {
 
 
     useEffect(() => {
+        // run async to fetch data while component is mounted
         async function fetchAllAPIs() {
             try {
+                const sessionId = localStorage.getItem("sessionId"); // Retrieve session ID from local storage
+                const headers = {
+                    "Content-Type": "application/json",
+                    ...(sessionId && { "X-Session-ID": sessionId }) // Only add if sessionId exists
+                };
+
+                process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"; // Ignore SSL verification
+
+                // 🔹 Fetch all APIs in parallel
                 const [portfolioRes, assetRes, btcRes, transactionsRes] = await Promise.all([
-                    fetch("http://localhost:5053/api/users/portfolio-summary", { credentials: "include" }),
-                    fetch("http://localhost:5053/api/users/asset-distribution", { credentials: "include" }),
-                    fetch("http://localhost:5053/api/Binance/btc-price-history"),
-                    fetch("http://localhost:5053/api/users/transactions", { credentials: "include" }),
+                    fetch("https://localhost:7166/api/users/portfolio-summary", {
+                        credentials: "include",
+                        headers: headers
+                    }),
+                    fetch("https://localhost:7166/api/users/asset-distribution", { credentials: "include", headers: headers }),
+                    fetch("https://localhost:7166/api/Binance/btc-price-history"),
+                    fetch("https://localhost:7166/api/users/transactions", { credentials: "include", headers: headers }),
                 ]);
 
                 if (!portfolioRes.ok || !assetRes.ok || !btcRes.ok || !transactionsRes.ok) {
@@ -146,7 +167,7 @@ export default function DashboardPage() {
             }
         }
 
-
+        // make sure API isnt fetched double times on component mount
         if (!hasFetched.current) {
             fetchAllAPIs();
             hasFetched.current = true; // Prevents extra API call
@@ -209,8 +230,14 @@ export default function DashboardPage() {
 
     return (
         <div className="flex min-h-[1024px] bg-gray-50">
-            {/* 🔹 Fullscreen Loading Overlay */}
+            {/* Fullscreen Loading Overlay */}
             <Loading isLoading={isLoading} />
+
+            {/* <AddTransactionFloatingBtn /> */}
+
+            {/* Slide in Modal Btn */}
+            <AddTransactionModal />
+            <Toaster richColors />
 
             {/* Sidebar */}
             <div className={`${isMenuOpen ? 'w-64' : 'w-20'} bg-white border-r border-gray-200 transition-all duration-300 flex flex-col`}>
@@ -264,7 +291,8 @@ export default function DashboardPage() {
                     ))}
                 </nav>
 
-                <div className="p-4 border-t border-gray-200">
+                {/* Need bg-color to cover out the floating btn */}
+                <div className="p-4 border-t border-gray-200 bg-background z-50">
                     <div className="flex items-center">
                         <Avatar className="cursor-pointer whitespace-nowrap !rounded-button">
                             <AvatarImage src="https://public.readdy.ai/ai/img_res/5909056f9b5bbcbeca9d5131171c1877.jpg" />

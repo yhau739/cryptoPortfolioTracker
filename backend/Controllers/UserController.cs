@@ -6,6 +6,7 @@ using backend.Models.Dtos;
 using System.Text.Json;
 using System.Net.Http;
 using System.Security.Claims;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace backend.Controllers
 {
@@ -16,12 +17,14 @@ namespace backend.Controllers
         private readonly IConfiguration _config;
         private readonly string _connectionString;
         private readonly HttpClient _httpClient;
+        private readonly IMemoryCache _cache;
 
-        public UserController(IConfiguration config, HttpClient httpClient)
+        public UserController(IConfiguration config, HttpClient httpClient, IMemoryCache cache)
         {
             _config = config;
             _connectionString = _config.GetConnectionString("DefaultConnection");
             _httpClient = httpClient;
+            _cache = cache;
         }
 
         [HttpPost("register")]
@@ -91,14 +94,13 @@ namespace backend.Controllers
 
 
         [HttpGet("portfolio-summary")]
-        public async Task<IActionResult> GetPortfolioSummary()
+        public async Task<IActionResult> GetPortfolioSummary([FromHeader(Name = "X-Session-ID")] string sessionId)
         {
-            //int? userId = HttpContext.Session.GetInt32("UserId");
-            // 🔹 Retrieve user ID from authentication claims
-            int userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "0");
-
-            if (userId == 0)
-                return Unauthorized("User not logged in");
+            // get userid from session stored in cache
+            if (!_cache.TryGetValue(sessionId, out int userId))
+            {
+                return Unauthorized("Invalid or expired session.");
+            }
 
             decimal totalPortfolioValue = 0;
             decimal totalPortfolioValueYesterday = 0;
@@ -179,13 +181,17 @@ namespace backend.Controllers
 
 
         [HttpGet("asset-distribution")]
-        public async Task<IActionResult> GetAssetDistribution()
+        public async Task<IActionResult> GetAssetDistribution([FromHeader(Name = "X-Session-ID")] string sessionId)
         {
             //int? userId = HttpContext.Session.GetInt32("UserId");
-            int userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "0");
+            //int userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "0");
 
-            if (userId == 0)
-                return Unauthorized("User not logged in");
+            //if (userId == 0)
+            //    return Unauthorized("User not logged in");
+            if (!_cache.TryGetValue(sessionId, out int userId))
+            {
+                return Unauthorized("Invalid or expired session.");
+            }
 
             var holdings = new List<(string Symbol, decimal Quantity)>();
             decimal totalPortfolioValue = 0;
@@ -254,12 +260,16 @@ namespace backend.Controllers
         }
 
         [HttpGet("transactions")]
-        public async Task<IActionResult> GetUserTransactions()
+        public async Task<IActionResult> GetUserTransactions([FromHeader(Name = "X-Session-ID")] string sessionId)
         {
-            int userId = int.Parse(HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "0");
+            //int userId = int.Parse(HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "0");
 
-            if (userId == 0)
-                return Unauthorized("User not logged in");
+            //if (userId == 0)
+            //    return Unauthorized("User not logged in");
+            if (!_cache.TryGetValue(sessionId, out int userId))
+            {
+                return Unauthorized("Invalid or expired session.");
+            }
 
             using (var conn = new SqlConnection(_connectionString))
             {

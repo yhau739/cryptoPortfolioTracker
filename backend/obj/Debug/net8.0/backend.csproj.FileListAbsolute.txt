@@ -49,3 +49,4 @@ C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\n
 C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\net8.0\ref\backend.dll
 C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\net8.0\backend.sourcelink.json

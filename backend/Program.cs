@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
+// certificate password = password123
 
 // Add CORS policy
 builder.Services.AddCors(options =>
@@ -8,21 +9,27 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFrontend",
         policy =>
         {
-            policy.WithOrigins("http://localhost:3000", "http://192.168.2.102:3000") // Allow frontend
+            policy.WithOrigins("https://localhost:3000") // Allow frontend
                   .AllowAnyHeader()
                   .AllowAnyMethod()
                   .AllowCredentials(); // Allows session cookies
         });
 });
 
+builder.Services.AddMemoryCache();
+
+
 // Enable authentication & authorization
 builder.Services.AddAuthentication("SessionAuth")
     .AddCookie("SessionAuth", options =>
     {
         options.Cookie.Name = ".AspNetCore.SessionAuth"; // Ensure the correct cookie name
-        options.Cookie.HttpOnly = true; // Security: Prevent JavaScript access
-        options.Cookie.SameSite = SameSiteMode.Lax; // Required for cross-origin authentication cookies
-        options.Cookie.SecurePolicy = CookieSecurePolicy.None;
+        // if httponly true then prevents js access
+        //options.Cookie.HttpOnly = false; 
+        // samsitemode lax only allows same domain access
+        options.Cookie.SameSite = SameSiteMode.None; 
+        // if secure = always then HTTPS only
+        options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
         options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
         options.LoginPath = "/api/auth/login";
         options.AccessDeniedPath = "/api/auth/access-denied";
@@ -60,8 +67,34 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.Use(async (context, next) =>
+{
+    context.Response.OnStarting(() =>
+    {
+        context.Response.Headers["Access-Control-Allow-Origin"] = "https://localhost:3000";
+        context.Response.Headers["Access-Control-Allow-Credentials"] = "true";
+        return Task.CompletedTask;
+    });
+
+    await next();
+});
+
+// test cookie
+//app.MapGet("/test-cookie", (HttpContext context) =>
+//{
+//    var cookieOptions = new CookieOptions
+//    {
+//        HttpOnly = true,
+//        Secure = true,
+//        SameSite = SameSiteMode.None,
+//        Expires = DateTime.UtcNow.AddMinutes(30)
+//    };
+//    context.Response.Cookies.Append("TestCookie", "test_value", cookieOptions);
+//    return Results.Ok("Test cookie set!");
+//});
+
 // HTTPS redirection before everything
-//app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 // Apply CORS before authentication & session
 app.UseCors("AllowFrontend");
 //app.UseSession();
@@ -69,5 +102,7 @@ app.UseAuthentication(); // Authenticate the user
 app.UseAuthorization(); // Then check permissions
 
 app.MapControllers();
+app.MapGet("/", () => Results.Ok("API is running!"));
+
 app.Run();
 

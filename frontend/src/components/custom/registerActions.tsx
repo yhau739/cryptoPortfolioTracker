@@ -20,13 +20,16 @@ export async function registerUser(data: { username: string; password: string })
   }
 
   try {
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"; // Ignore SSL verification
+
     // Call .NET Web API for user registration
-    const response = await fetch("http://localhost:5053/api/users/register", {
+    const response = await fetch("https://localhost:7166/api/users/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
+      credentials: "include"
     })
 
     // Parse the API response

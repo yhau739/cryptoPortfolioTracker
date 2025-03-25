@@ -72,6 +72,18 @@
         }
       }
     },
+    "/": {
+      "get": {
+        "tags": [
+          "backend"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Binance/usdt-pairs": {
       "get": {
         "tags": [
@@ -134,6 +146,15 @@
       "post": {
         "tags": [
           "Transactions"
+        ],
+        "parameters": [
+          {
+            "name": "X-Session-ID",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "requestBody": {
           "content": {
@@ -209,6 +230,15 @@
         "tags": [
           "User"
         ],
+        "parameters": [
+          {
+            "name": "X-Session-ID",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -221,6 +251,15 @@
         "tags": [
           "User"
         ],
+        "parameters": [
+          {
+            "name": "X-Session-ID",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -232,6 +271,15 @@
       "get": {
         "tags": [
           "User"
+        ],
+        "parameters": [
+          {
+            "name": "X-Session-ID",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -285,27 +333,30 @@
         "additionalProperties": false
       },
       "TransactionRequest": {
+        "required": [
+          "crypto"
+        ],
         "type": "object",
         "properties": {
-          "cryptoSymbol": {
-            "type": "string",
-            "nullable": true
+          "crypto": {
+            "minLength": 1,
+            "type": "string"
           },
           "quantity": {
             "type": "number",
             "format": "double"
           },
+          "useCurrentPrice": {
+            "type": "boolean"
+          },
           "price": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "nullable": true
           },
           "transactionType": {
             "type": "string",
             "nullable": true
-          },
-          "transactionDate": {
-            "type": "string",
-            "format": "date-time"
           }
         },
         "additionalProperties": false

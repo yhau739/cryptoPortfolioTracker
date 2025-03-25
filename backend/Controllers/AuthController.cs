@@ -10,6 +10,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace backend.Controllers
 {
@@ -19,16 +20,19 @@ namespace backend.Controllers
     {
         private readonly IConfiguration _config;
         private readonly string _connectionString;
+        private readonly IMemoryCache _cache;
 
-        public AuthController(IConfiguration config)
+        public AuthController(IMemoryCache cache, IConfiguration config)
         {
             _config = config;
             _connectionString = _config.GetConnectionString("DefaultConnection");
+            _cache = cache;
         }
 
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
+
             using (var conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
@@ -51,29 +55,11 @@ namespace backend.Controllers
 
                                 if (computedHash.SequenceEqual(storedPasswordHash))
                                 {
-                                    // Store user data in session
-                                    //HttpContext.Session.SetInt32("UserId", userId);
-                                    //HttpContext.Session.SetString("Username", username);
-                                    //HttpContext.Session.SetString("Role", role);
+                                    // generate session store in cache
+                                    string sessionId = Guid.NewGuid().ToString(); // Generate a session key
+                                    _cache.Set(sessionId, userId, TimeSpan.FromHours(1)); // Store UserId in cache
 
-                                    // 🔹 Create authentication claims
-                                    var claims = new List<Claim>
-                                    {
-                                        new Claim(ClaimTypes.NameIdentifier, userId.ToString()), // Store user ID in claims
-                                        new Claim(ClaimTypes.NameIdentifier, username)
-                                    };
-
-                                    var claimsIdentity = new ClaimsIdentity(claims, "SessionAuth");
-                                    var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
-
-                                    // Sign in the user and issue an authentication cookie
-                                    await HttpContext.SignInAsync("SessionAuth", claimsPrincipal);
-
-                                    // Double-check that authentication is now valid
-                                    bool isAuthenticated = HttpContext.User.Identity.IsAuthenticated;
-                                    Console.WriteLine($"🔍 Authentication Status After SignInAsync: {isAuthenticated}");
-
-                                    return Ok(new { success = true, message = "Login successful" });
+                                    return Ok(new { success = true, message = "Login successful", sessionId = sessionId });
                                 }
                             }
 
