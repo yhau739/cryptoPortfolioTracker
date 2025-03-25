@@ -7,20 +7,20 @@
       "RelativeMoniker": "D:0:0:{72AC6257-E94C-4618-ADEE-5AC8FAF1F412}|backend.csproj|solutionrelative:controllers\\transactionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{72AC6257-E94C-4618-ADEE-5AC8FAF1F412}|backend.csproj|c:\\users\\yeeha\\onedrive\\desktop\\devct\\cryptoportfoliotracker\\backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72AC6257-E94C-4618-ADEE-5AC8FAF1F412}|backend.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72AC6257-E94C-4618-ADEE-5AC8FAF1F412}|backend.csproj|c:\\users\\yeeha\\onedrive\\desktop\\devct\\cryptoportfoliotracker\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72AC6257-E94C-4618-ADEE-5AC8FAF1F412}|backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{72AC6257-E94C-4618-ADEE-5AC8FAF1F412}|backend.csproj|c:\\users\\yeeha\\onedrive\\desktop\\devct\\cryptoportfoliotracker\\backend\\models\\dtos\\addtransactiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{72AC6257-E94C-4618-ADEE-5AC8FAF1F412}|backend.csproj|solutionrelative:models\\dtos\\addtransactiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{72AC6257-E94C-4618-ADEE-5AC8FAF1F412}|backend.csproj|c:\\users\\yeeha\\onedrive\\desktop\\devct\\cryptoportfoliotracker\\backend\\models\\dtos\\transactionrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{72AC6257-E94C-4618-ADEE-5AC8FAF1F412}|backend.csproj|solutionrelative:models\\dtos\\transactionrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72AC6257-E94C-4618-ADEE-5AC8FAF1F412}|backend.csproj|c:\\users\\yeeha\\onedrive\\desktop\\devct\\cryptoportfoliotracker\\backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72AC6257-E94C-4618-ADEE-5AC8FAF1F412}|backend.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72AC6257-E94C-4618-ADEE-5AC8FAF1F412}|backend.csproj|c:\\users\\yeeha\\onedrive\\desktop\\devct\\cryptoportfoliotracker\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72AC6257-E94C-4618-ADEE-5AC8FAF1F412}|backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{72AC6257-E94C-4618-ADEE-5AC8FAF1F412}|backend.csproj|c:\\users\\yeeha\\onedrive\\desktop\\devct\\cryptoportfoliotracker\\backend\\models\\dtos\\assetdistributiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -96,14 +96,14 @@
               "RelativeDocumentMoniker": "Controllers\\TransactionsController.cs",
               "ToolTip": "C:\\Users\\yeeha\\OneDrive\\Desktop\\DevCT\\cryptoPortfolioTracker\\backend\\Controllers\\TransactionsController.cs",
               "RelativeToolTip": "Controllers\\TransactionsController.cs",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAAAHkAAABTAAAAAAAAAA==",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAAAJUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-10T10:09:17.6Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "AddTransactionDto.cs",
               "DocumentMoniker": "C:\\Users\\yeeha\\OneDrive\\Desktop\\DevCT\\cryptoPortfolioTracker\\backend\\Models\\Dtos\\AddTransactionDto.cs",
               "RelativeDocumentMoniker": "Models\\Dtos\\AddTransactionDto.cs",
@@ -116,7 +116,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "TransactionRequest.cs",
               "DocumentMoniker": "C:\\Users\\yeeha\\OneDrive\\Desktop\\DevCT\\cryptoPortfolioTracker\\backend\\Models\\Dtos\\TransactionRequest.cs",
               "RelativeDocumentMoniker": "Models\\Dtos\\TransactionRequest.cs",
@@ -129,7 +129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\yeeha\\OneDrive\\Desktop\\DevCT\\cryptoPortfolioTracker\\backend\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -142,13 +142,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\yeeha\\OneDrive\\Desktop\\DevCT\\cryptoPortfolioTracker\\backend\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\yeeha\\OneDrive\\Desktop\\DevCT\\cryptoPortfolioTracker\\backend\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAADwvz0AAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAADoAAAAAAAAAAADwvz0AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-10T10:24:22.203Z",
               "EditorCaption": ""
