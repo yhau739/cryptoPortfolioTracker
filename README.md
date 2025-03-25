@@ -59,19 +59,19 @@ Here are the upcoming features and enhancements planned:
 
 ### 🔧 Backend
 - [x] Add secure user registration and login
-- [ ] Implement password hashing and salting
+- [x] Implement password hashing and salting
 - [ ] Store sessions in Redis for production scalability
-- [ ] Add API endpoints for:
-  - [ ] Fetching portfolio summary
-  - [ ] Calculating realized/unrealized PNL
+- [x] Add API endpoints for:
+  - [x] Fetching portfolio summary
+  - [x] Calculating realized/unrealized PNL
   - [ ] Exporting transactions to CSV
 
 ### 💻 Frontend
-- [ ] Holdings dashboard with charts and insights
-- [ ] View transaction history with filtering and sorting
-- [ ] Mobile responsive improvements
+- [x] Holdings dashboard with charts and insights
+- [x] View transaction history with filtering and sorting
+- [x] Mobile responsive improvements
 - [ ] PWA support for installable desktop/mobile experience
-- [ ] Add chart view of price over time (using Recharts or Chart.js)
+- [x] Add chart view of price over time (using Recharts or Chart.js)
 
 ### 🧪 Dev Experience
 - [ ] Add unit/integration tests
