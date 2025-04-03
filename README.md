@@ -1,6 +1,6 @@
 # 🪙 Crypto Portfolio Tracker
 
-Crypto Portfolio Tracker is a full-stack web application that allows users to track their cryptocurrency investments, manage transactions, and view real-time market prices. It is designed with performance and usability in mind, combining a clean frontend with a robust backend API and a SQL database.
+Crypto Portfolio Tracker is a full-stack web application that allows users to track their cryptocurrency investments, manage transactions, and view real-time market prices. It is made with react + typeScript frontend and c# backend and utilizes Binance public API for charts & price fetching.
 
 ---
 
