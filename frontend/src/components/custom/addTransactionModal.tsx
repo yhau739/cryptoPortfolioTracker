@@ -54,6 +54,8 @@ const formSchema = z.object({
   }),
 })
 
+const baseURL = process.env.NEXT_PUBLIC_DOTNET_API_BASE_URL;
+
 export function AddTransactionModal() {
   const [open, setOpen] = useState(false)
 
@@ -85,7 +87,7 @@ export function AddTransactionModal() {
           price: values.price ? parseFloat(values.price) : undefined,
         };
 
-        const res = await fetch("https://localhost:7166/api/transactions/add", {
+        const res = await fetch(`${baseURL}/api/transactions/add`, {
           method: "POST",
           body: JSON.stringify(payload),
           headers: headers,
@@ -99,7 +101,7 @@ export function AddTransactionModal() {
           throw new Error(result.message);
         }
 
-        // ✅ Only close modal & reset on success
+        // Only close modal & reset on success
         setOpen(false);
         form.reset();
 

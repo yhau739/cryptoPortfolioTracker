@@ -8,6 +8,8 @@ const userSchema = z.object({
   password: z.string().min(8),
 })
 
+const baseURL = process.env.NEXT_PUBLIC_DOTNET_API_BASE_URL;
+
 export async function registerUser(data: { username: string; password: string }) {
   // Validate the input data
   const validationResult = userSchema.safeParse(data)
@@ -23,7 +25,7 @@ export async function registerUser(data: { username: string; password: string })
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"; // Ignore SSL verification
 
     // Call .NET Web API for user registration
-    const response = await fetch("https://localhost:7166/api/users/register", {
+    const response = await fetch(`${baseURL}/api/users/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

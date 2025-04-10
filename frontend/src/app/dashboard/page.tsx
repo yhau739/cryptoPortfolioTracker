@@ -27,6 +27,8 @@ import AddTransactionFloatingBtn from "@/components/ui/addTxnFloatBtn";
 import { AddTransactionModal } from "@/components/custom/addTransactionModal";
 import { Toaster } from 'sonner';
 
+const baseURL = process.env.NEXT_PUBLIC_DOTNET_API_BASE_URL;
+
 export default function DashboardPage() {
     const [isLoading, setIsLoading] = useState(true); // ✅ Add loading state
     const [activeNav, setActiveNav] = useState('dashboard');
@@ -76,7 +78,10 @@ export default function DashboardPage() {
             const option = {
                 animation: false,
                 tooltip: {
-                    trigger: 'item'
+                    trigger: 'item',
+                    formatter: (params: any) => {
+                        return `${params.marker} ${params.name}&nbsp;&nbsp;<strong>${params.value}%</strong>`;
+                    }
                 },
                 legend: {
                     orient: 'vertical',
@@ -121,13 +126,13 @@ export default function DashboardPage() {
 
                 // 🔹 Fetch all APIs in parallel
                 const [portfolioRes, assetRes, btcRes, transactionsRes] = await Promise.all([
-                    fetch("https://localhost:7166/api/users/portfolio-summary", {
+                    fetch(`${baseURL}/api/users/portfolio-summary`, {
                         credentials: "include",
                         headers: headers
                     }),
-                    fetch("https://localhost:7166/api/users/asset-distribution", { credentials: "include", headers: headers }),
-                    fetch("https://localhost:7166/api/Binance/btc-price-history"),
-                    fetch("https://localhost:7166/api/users/transactions", { credentials: "include", headers: headers }),
+                    fetch(`${baseURL}/api/users/asset-distribution`, { credentials: "include", headers: headers }),
+                    fetch(`${baseURL}/api/Binance/btc-price-history`),
+                    fetch(`${baseURL}/api/users/transactions`, { credentials: "include", headers: headers }),
                 ]);
 
                 if (!portfolioRes.ok || !assetRes.ok || !btcRes.ok || !transactionsRes.ok) {
@@ -138,7 +143,7 @@ export default function DashboardPage() {
                 const portfolioData = await portfolioRes.json();
                 const assetData = await assetRes.json();
                 const btcData = await btcRes.json();
-                console.log(btcData);
+                // console.log(btcData);
                 const transactionsData = await transactionsRes.json();
 
                 // 🔹 Update states
@@ -151,7 +156,16 @@ export default function DashboardPage() {
                     bestPerformance: portfolioData.bestPerformance
                 });
 
-                updatePieChart(assetData.assetDistribution);
+                // console.log(assetData.assetDistribution);
+                const formatAssetDistribution = assetData.assetDistribution.map(
+                    (asset: { percentage: number; }) => ({
+                        ...asset,
+                        percentage: parseFloat(asset.percentage.toFixed(2))// Ensure percentage is a 2 decimal points number
+                    })
+                );
+
+                // console.log(formatAssetDistribution);
+                updatePieChart(formatAssetDistribution);
 
                 setBtcPriceData({
                     dates: btcData.map((entry: { date: string }) => entry.date),
@@ -270,6 +284,7 @@ export default function DashboardPage() {
                     </Button>
                 </div>
 
+                {/* SideBar */}
                 <nav className="flex-1 p-4">
                     {[
                         { id: 'dashboard', icon: faChartLine, label: 'Dashboard' },

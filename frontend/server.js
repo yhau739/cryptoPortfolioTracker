@@ -8,9 +8,10 @@ const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
+// trusted HTTPS certificates for localhost
 const httpsOptions = {
-  // key: fs.readFileSync(path.join(__dirname, "localhost-key.pem")),
-  // cert: fs.readFileSync(path.join(__dirname, "localhost.pem")),
+  key: fs.readFileSync(path.join(__dirname, "localhost-key.pem")),
+  cert: fs.readFileSync(path.join(__dirname, "localhost.pem")),
   // ca : fs.readFileSync(path.join(__dirname, "backend-cert.pem"))
 };
 
