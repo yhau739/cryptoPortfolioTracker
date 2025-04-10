@@ -9,7 +9,11 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFrontend",
         policy =>
         {
-            policy.WithOrigins("https://localhost:3000") // Allow frontend
+            policy.WithOrigins(
+                    "https://localhost:3000",
+                    "https://crypto-portfolio-tracker-erosunty7-haus-projects-e2841cb0.vercel.app",
+                    "https://crypto-portfolio-tracker-lilac.vercel.app"
+                    ) // Allow frontend
                   .AllowAnyHeader()
                   .AllowAnyMethod()
                   .AllowCredentials(); // Allows session cookies
@@ -67,31 +71,18 @@ if (app.Environment.IsDevelopment() || app.Environment.IsStaging())
     app.UseSwaggerUI();
 }
 
-app.Use(async (context, next) =>
-{
-    context.Response.OnStarting(() =>
-    {
-        context.Response.Headers["Access-Control-Allow-Origin"] = "https://localhost:3000";
-        context.Response.Headers["Access-Control-Allow-Credentials"] = "true";
-        return Task.CompletedTask;
-    });
-
-    await next();
-});
-
-// test cookie
-//app.MapGet("/test-cookie", (HttpContext context) =>
+//app.Use(async (context, next) =>
 //{
-//    var cookieOptions = new CookieOptions
+//    context.Response.OnStarting(() =>
 //    {
-//        HttpOnly = true,
-//        Secure = true,
-//        SameSite = SameSiteMode.None,
-//        Expires = DateTime.UtcNow.AddMinutes(30)
-//    };
-//    context.Response.Cookies.Append("TestCookie", "test_value", cookieOptions);
-//    return Results.Ok("Test cookie set!");
+//        context.Response.Headers["Access-Control-Allow-Origin"] = "https://localhost:3000";
+//        context.Response.Headers["Access-Control-Allow-Credentials"] = "true";
+//        return Task.CompletedTask;
+//    });
+
+//    await next();
 //});
+
 
 // HTTPS redirection before everything
 app.UseHttpsRedirection();

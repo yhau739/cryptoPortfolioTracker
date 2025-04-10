@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\yeeha\\OneDrive\\Desktop\\DevCT\\cryptoPortfolioTracker\\backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{72AC6257-E94C-4618-ADEE-5AC8FAF1F412}|backend.csproj|c:\\users\\yeeha\\onedrive\\desktop\\devct\\cryptoportfoliotracker\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72AC6257-E94C-4618-ADEE-5AC8FAF1F412}|backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{72AC6257-E94C-4618-ADEE-5AC8FAF1F412}|backend.csproj|c:\\users\\yeeha\\onedrive\\desktop\\devct\\cryptoportfoliotracker\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{72AC6257-E94C-4618-ADEE-5AC8FAF1F412}|backend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{72AC6257-E94C-4618-ADEE-5AC8FAF1F412}|backend.csproj|c:\\users\\yeeha\\onedrive\\desktop\\devct\\cryptoportfoliotracker\\backend\\controllers\\binancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{72AC6257-E94C-4618-ADEE-5AC8FAF1F412}|backend.csproj|solutionrelative:controllers\\binancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72AC6257-E94C-4618-ADEE-5AC8FAF1F412}|backend.csproj|c:\\users\\yeeha\\onedrive\\desktop\\devct\\cryptoportfoliotracker\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72AC6257-E94C-4618-ADEE-5AC8FAF1F412}|backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{72AC6257-E94C-4618-ADEE-5AC8FAF1F412}|backend.csproj|c:\\users\\yeeha\\onedrive\\desktop\\devct\\cryptoportfoliotracker\\backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -82,7 +82,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -102,7 +102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\yeeha\\OneDrive\\Desktop\\DevCT\\cryptoPortfolioTracker\\backend\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -115,20 +115,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\yeeha\\OneDrive\\Desktop\\DevCT\\cryptoPortfolioTracker\\backend\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\yeeha\\OneDrive\\Desktop\\DevCT\\cryptoPortfolioTracker\\backend\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEUAAAAAAAAAAADwv1MAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-10T10:08:12.379Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "BinanceController.cs",
               "DocumentMoniker": "C:\\Users\\yeeha\\OneDrive\\Desktop\\DevCT\\cryptoPortfolioTracker\\backend\\Controllers\\BinanceController.cs",
               "RelativeDocumentMoniker": "Controllers\\BinanceController.cs",
@@ -141,7 +141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\yeeha\\OneDrive\\Desktop\\DevCT\\cryptoPortfolioTracker\\backend\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
@@ -176,10 +176,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-11T09:00:06.819Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
@@ -314,6 +310,10 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-10T10:17:07.684Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }
