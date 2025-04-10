@@ -23,7 +23,7 @@ import {
     TableRow,
 } from "@/components/ui/table";
 import Loading from '@/components/ui/loader';
-import AddTransactionFloatingBtn from "@/components/ui/addTxnFloatBtn";
+// import AddTransactionFloatingBtn from "@/components/ui/addTxnFloatBtn";
 import { AddTransactionModal } from "@/components/custom/addTransactionModal";
 import { Toaster } from 'sonner';
 
