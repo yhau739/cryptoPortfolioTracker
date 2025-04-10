@@ -1,3 +1,5 @@
+// export to smaller components later in the stage
+
 // export default function Sidebar() {
 //     return (
 //                 <nav className="flex-1 p-4">
