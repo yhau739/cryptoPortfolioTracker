@@ -1,4 +1,4 @@
-"use server";
+// "use server";
 
 export async function loginUser(data: { username: string; password: string }) {
   const baseURL = process.env.NEXT_PUBLIC_DOTNET_API_BASE_URL;
