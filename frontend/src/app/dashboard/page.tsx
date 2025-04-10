@@ -122,7 +122,10 @@ export default function DashboardPage() {
                     ...(sessionId && { "X-Session-ID": sessionId }) // Only add if sessionId exists
                 };
 
-                process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"; // Ignore SSL verification
+                if (process.env.NODE_ENV !== "production") {
+                    process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+                }
+                // Ignore SSL verification
 
                 // 🔹 Fetch all APIs in parallel
                 const [portfolioRes, assetRes, btcRes, transactionsRes] = await Promise.all([

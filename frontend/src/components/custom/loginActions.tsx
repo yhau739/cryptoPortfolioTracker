@@ -4,7 +4,11 @@ export async function loginUser(data: { username: string; password: string }) {
   const baseURL = process.env.NEXT_PUBLIC_DOTNET_API_BASE_URL;
 
   // try {
-  process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"; // Ignore SSL verification
+  if (process.env.NODE_ENV !== "production") {
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+  }
+  // Ignore SSL verification
+
   const response = await fetch(`${baseURL}/api/auth/login`, {
     method: "POST",
     headers: {
