@@ -82,11 +82,15 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
@@ -110,8 +114,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAACvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-10T10:06:25.503Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-10T10:06:25.503Z"
             },
             {
               "$type": "Document",
@@ -121,7 +124,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\yeeha\\OneDrive\\Desktop\\DevCT\\cryptoPortfolioTracker\\backend\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAADwv1MAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-10T10:08:12.379Z",
               "EditorCaption": ""
@@ -136,8 +139,7 @@
               "RelativeToolTip": "Controllers\\BinanceController.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T04:09:46.766Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-11T04:09:46.766Z"
             },
             {
               "$type": "Document",
@@ -149,8 +151,7 @@
               "RelativeToolTip": "Controllers\\AuthController.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAqwCMAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T10:24:22.203Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-10T10:24:22.203Z"
             },
             {
               "$type": "Document",
@@ -162,8 +163,7 @@
               "RelativeToolTip": "Controllers\\UserController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAP8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T02:24:03.519Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-11T02:24:03.519Z"
             },
             {
               "$type": "Document",
@@ -199,8 +199,7 @@
               "RelativeToolTip": "Models\\Dtos\\AssetDistributionDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T04:24:05.617Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T04:24:05.617Z"
             },
             {
               "$type": "Document",
@@ -212,8 +211,7 @@
               "RelativeToolTip": "Controllers\\TransactionsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T10:09:17.6Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-10T10:09:17.6Z"
             },
             {
               "$type": "Document",
@@ -296,8 +294,7 @@
               "RelativeToolTip": "Controllers\\PnlController.cs",
               "ViewState": "AgIAAF8AAAAAAAAAAAAUwKAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T03:53:32.152Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-11T03:53:32.152Z"
             },
             {
               "$type": "Document",
@@ -310,10 +307,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-10T10:17:07.684Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }

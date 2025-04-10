@@ -22,10 +22,11 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
-import Loading from '@/components/ui/loader';
+import Loading from '@/components/custom/loader';
 // import AddTransactionFloatingBtn from "@/components/ui/addTxnFloatBtn";
 import { AddTransactionModal } from "@/components/custom/addTransactionModal";
 import { Toaster } from 'sonner';
+import { useRouter } from 'next/navigation';
 
 const baseURL = process.env.NEXT_PUBLIC_DOTNET_API_BASE_URL;
 
@@ -33,6 +34,7 @@ export default function DashboardPage() {
     const [isLoading, setIsLoading] = useState(true); // ✅ Add loading state
     const [activeNav, setActiveNav] = useState('dashboard');
     const [isMenuOpen, setIsMenuOpen] = useState(true);
+    const router = useRouter();
 
     // referencing the HTML Components
     const priceChartRef = useRef<HTMLDivElement>(null);
@@ -63,6 +65,12 @@ export default function DashboardPage() {
 
     // initialize the btc price data constant
     const [btcPriceData, setBtcPriceData] = useState({ dates: [], prices: [] });
+
+    const handleLogout = () => {
+        // const router = useRouter();
+        localStorage.removeItem("sessionId"); // Remove session ID from local storage
+        router.push("/"); // Redirect to main page
+    }
 
     // declare fn to update chart
     const updatePieChart = (data: { percentage: number; symbol: string }[]) => {
@@ -249,21 +257,14 @@ export default function DashboardPage() {
         <div className="flex min-h-[1024px] bg-gray-50">
             {/* Fullscreen Loading Overlay */}
             <Loading isLoading={isLoading} />
-
-            {/* <AddTransactionFloatingBtn /> */}
-
             {/* Slide in Modal Btn */}
             <AddTransactionModal />
+            {/* Toast */}
             <Toaster richColors />
 
             {/* Sidebar */}
             <div className={`${isMenuOpen ? 'w-64' : 'w-20'} bg-white border-r border-gray-200 transition-all duration-300 flex flex-col`}>
                 <div className="p-4 border-b border-gray-200 flex items-center justify-between">
-                    {/* <img
-                        src="https://public.readdy.ai/ai/img_res/d3ab861ac7e62a10493d72133661f24e.jpg"
-                        alt="Logo"
-                        className={`h-8 ${!isMenuOpen && 'hidden'}`}
-                    /> */}
                     <span className={`h-8 text-xl font-bold text-blue-500 pl-3 ${!isMenuOpen && 'hidden'}`}>
                         CryptoTrack
                     </span>
@@ -290,18 +291,21 @@ export default function DashboardPage() {
                 {/* SideBar */}
                 <nav className="flex-1 p-4">
                     {[
-                        { id: 'dashboard', icon: faChartLine, label: 'Dashboard' },
-                        { id: 'portfolio', icon: faWallet, label: 'Portfolio' },
-                        { id: 'transactions', icon: faExchangeAlt, label: 'Transactions' },
-                        { id: 'analytics', icon: faChartPie, label: 'Analytics' },
-                        { id: 'settings', icon: faCog, label: 'Settings' }
+                        { id: 'dashboard', icon: faChartLine, label: 'Dashboard', url: '/dashboard' },
+                        { id: 'portfolio', icon: faWallet, label: 'Portfolio', url: '/portfolio' },
+                        { id: 'transactions', icon: faExchangeAlt, label: 'Transactions', url: '/transactions' },
+                        { id: 'analytics', icon: faChartPie, label: 'Analytics', url: '/analytics' },
+                        { id: 'settings', icon: faCog, label: 'Settings', url: '/settings' }
                     ].map(item => (
                         <div
                             key={item.id}
                             className={`flex items-center p-3 mb-2 rounded-lg cursor-pointer whitespace-nowrap
                             ${activeNav === item.id ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:bg-gray-50'}
                             `}
-                            onClick={() => setActiveNav(item.id)}
+                            onClick={() => {
+                                setActiveNav(item.id);
+                                router.push(item.url); // Navigate
+                            }}
                         >
                             <FontAwesomeIcon icon={item.icon} className="text-lg" />
                             {isMenuOpen && <span className="ml-3">{item.label}</span>}
@@ -331,14 +335,18 @@ export default function DashboardPage() {
                 {/* Header */}
                 <header className="bg-white border-b border-gray-200 h-16 flex items-center px-6 justify-between">
                     <div className="flex items-center">
-                        <a
-                            href="#"
+                        <button
+                            onClick={() => {
+                                handleLogout();
+                            }}
                             data-readdy="true"
-                            className="text-gray-600 hover:text-gray-900 mr-4 transition"
+                            className="text-gray-600 hover:text-gray-900 hover:text-bold mr-4 transition cursor-pointer"
+                            aria-label='Logout'
+                            title='Logout'
                         >
                             <FontAwesomeIcon icon={faArrowLeft} />
                             {isMenuOpen && <span className="ml-2">Logout</span>}
-                        </a>
+                        </button>
                         <h1 className="text-xl font-semibold">Dashboard</h1>
                     </div>
 
