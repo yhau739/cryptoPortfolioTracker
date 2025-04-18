@@ -14,6 +14,7 @@ C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\bin\Debug\n
 C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -31,6 +32,7 @@ C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\n
 C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\net8.0\backend.csproj.CoreCompileInputs.cache
 C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\net8.0\backend.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\net8.0\backend.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\net8.0\backend.sourcelink.json
 C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\net8.0\scopedcss\bundle\backend.styles.css
 C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\net8.0\staticwebassets.development.json
@@ -41,12 +43,10 @@ C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\n
 C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.backend.props
 C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.backend.props
 C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\net8.0\backend.csproj.Up2Date
 C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\net8.0\backend.dll
 C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\net8.0\refint\backend.dll
 C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\net8.0\backend.pdb
 C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\net8.0\backend.genruntimeconfig.cache
 C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\net8.0\ref\backend.dll
-C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\bin\Debug\net8.0\Newtonsoft.Json.dll
-C:\Users\yeeha\OneDrive\Desktop\DevCT\cryptoPortfolioTracker\backend\obj\Debug\net8.0\backend.sourcelink.json

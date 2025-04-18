@@ -12,7 +12,7 @@ namespace backend.Controllers
 {
     [Route("api/users")]
     [ApiController]
-    public class UserController : Controller
+    public class UserController : ControllerBase
     {
         private readonly IConfiguration _config;
         private readonly string _connectionString;

@@ -82,6 +82,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PingController",
+    "Method": "GetAsync",
+    "RelativePath": "api/Ping/get",
+    "HttpMethod": "HEAD",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "backend.Controllers.PnlController",
     "Method": "GetRealTimePNLAsync",
     "RelativePath": "api/pnl/{cryptoSymbol}",

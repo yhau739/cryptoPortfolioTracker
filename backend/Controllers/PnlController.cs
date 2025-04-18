@@ -7,7 +7,7 @@ namespace backend.Controllers
 {
     [Route("api/pnl")]
     [ApiController]
-    public class PnlController : Controller
+    public class PnlController : ControllerBase
     {
         private readonly IConfiguration _config;
         private readonly string _connectionString;

@@ -108,6 +108,18 @@
         }
       }
     },
+    "/api/Ping/get": {
+      "head": {
+        "tags": [
+          "Ping"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/pnl/realized-pnl": {
       "get": {
         "tags": [

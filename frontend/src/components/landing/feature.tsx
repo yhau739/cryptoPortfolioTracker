@@ -12,7 +12,7 @@ const feature2Image = 'https://public.readdy.ai/ai/img_res/341e8cf7bf4945d81b98a
 
 const feature3Image = 'https://public.readdy.ai/ai/img_res/39c7da6e24587705d37be1bc8d2d9556.jpg';
 
-const feature4Image = '/realtime-market-data.png';
+const feature4Image = '/realTimeMarketData.png';
 
 export default function Feature() {
     return (

@@ -12,7 +12,7 @@ export default function Footer() {
         <div>
           <h2 className="text-2xl font-bold text-white">CryptoTrack</h2>
           <p className="mt-2 text-gray-400">
-            Your smart crypto tracking companion.
+            Your smart portfolio tracking companion.
           </p>
         </div>
 
@@ -51,7 +51,7 @@ export default function Footer() {
 
       {/* Copyright */}
       <div className="text-center text-gray-500 mt-8 text-sm">
-        &copy; {new Date().getFullYear()} CryptoTrack. All Rights Reserved.
+        &copy; {new Date().getFullYear()} Designed & Developed by <a className="hover:text-white" href="https://www.linkedin.com/in/lee-yee-hau-4048721b5/">Yee Hau</a>. All Rights Reserved.
       </div>
     </footer>
   );
