@@ -27,6 +27,7 @@ import Loading from '@/components/custom/loader';
 import { AddTransactionModal } from "@/components/custom/addTransactionModal";
 import { Toaster } from 'sonner';
 import { useRouter } from 'next/navigation';
+import Sidebar from '@/components/custom/sidebar'
 
 const baseURL = process.env.NEXT_PUBLIC_DOTNET_API_BASE_URL;
 
@@ -263,72 +264,7 @@ export default function DashboardPage() {
             <Toaster richColors />
 
             {/* Sidebar */}
-            <div className={`${isMenuOpen ? 'w-64' : 'w-20'} bg-white border-r border-gray-200 transition-all duration-300 flex flex-col`}>
-                <div className="p-4 border-b border-gray-200 flex items-center justify-between">
-                    <span className={`h-8 text-xl font-bold text-blue-500 pl-3 ${!isMenuOpen && 'hidden'}`}>
-                        CryptoTrack
-                    </span>
-                    <Button
-                        variant="ghost"
-                        size="icon"
-                        className="cursor-pointer whitespace-nowrap !rounded-button"
-                        onClick={() => {
-                            setIsMenuOpen(!isMenuOpen);
-
-                            // resize after sidebar completes animation
-                            setTimeout(() => {
-                                if (priceChartRef.current) {
-                                    const chart = echarts.getInstanceByDom(priceChartRef.current);
-                                    if (chart) chart.resize();
-                                }
-                            }, 200);
-                        }}
-                    >
-                        <FontAwesomeIcon icon={isMenuOpen ? faChevronLeft : faChevronRight} />
-                    </Button>
-                </div>
-
-                {/* SideBar */}
-                <nav className="flex-1 p-4">
-                    {[
-                        { id: 'dashboard', icon: faChartLine, label: 'Dashboard', url: '/dashboard' },
-                        { id: 'portfolio', icon: faWallet, label: 'Portfolio', url: '/portfolio' },
-                        { id: 'transactions', icon: faExchangeAlt, label: 'Transactions', url: '/transactions' },
-                        { id: 'analytics', icon: faChartPie, label: 'Analytics', url: '/analytics' },
-                        { id: 'settings', icon: faCog, label: 'Settings', url: '/settings' }
-                    ].map(item => (
-                        <div
-                            key={item.id}
-                            className={`flex items-center p-3 mb-2 rounded-lg cursor-pointer whitespace-nowrap
-                            ${activeNav === item.id ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:bg-gray-50'}
-                            `}
-                            onClick={() => {
-                                setActiveNav(item.id);
-                                router.push(item.url); // Navigate
-                            }}
-                        >
-                            <FontAwesomeIcon icon={item.icon} className="text-lg" />
-                            {isMenuOpen && <span className="ml-3">{item.label}</span>}
-                        </div>
-                    ))}
-                </nav>
-
-                {/* Need bg-color to cover out the floating btn */}
-                <div className="p-4 border-t border-gray-200 bg-background z-50">
-                    <div className="flex items-center">
-                        <Avatar className="cursor-pointer whitespace-nowrap !rounded-button">
-                            <AvatarImage src="https://public.readdy.ai/ai/img_res/5909056f9b5bbcbeca9d5131171c1877.jpg" />
-                            <AvatarFallback>JD</AvatarFallback>
-                        </Avatar>
-                        {isMenuOpen && (
-                            <div className="ml-3">
-                                <div className="font-medium">James Davidson</div>
-                                <div className="text-sm text-gray-500">Premium User</div>
-                            </div>
-                        )}
-                    </div>
-                </div>
-            </div>
+            <Sidebar currentPage="dashboard" setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
 
             {/* Main Content */}
             <div className="flex-1">

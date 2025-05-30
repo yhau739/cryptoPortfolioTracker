@@ -21,7 +21,7 @@ export default function Settings(){
             {/* Toast */}
             <Toaster richColors />
 
-            <Sidebar currentPage="setting" setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
+            <Sidebar currentPage="settings" setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
 
             {/* Main Content Area */}
             <div className="flex-1">
