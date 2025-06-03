@@ -133,9 +133,12 @@ html {
 } */
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-5px);
   }
@@ -145,6 +148,7 @@ html {
   0% {
     box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
   }
+
   100% {
     box-shadow: 0 0 20px rgba(59, 130, 246, 0);
   }
@@ -165,7 +169,76 @@ html {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Overwrite chart variables for analytics */
+.analytics {
+  /* 🎨 Chart Colors */
+  --chart-1: 210 100% 60%;
+  /* Blue */
+  --chart-2: 160 100% 45%;
+  /* Green */
+  --chart-3: 30 100% 60%;
+  /* Orange */
+  --chart-4: 340 100% 55%;
+  /* Red */
+  --chart-5: 270 100% 60%;
+  /* Purple */
+  --chart-6: 172, 57%, 39%;
+  /* Teal Green */
+  --chart-7: 14, 77%, 61%;
+  /* Darker Orange */
+  --chart-8: 145, 60%, 45%;
+  --chart-9: 160, 80%, 70%;
+
+  /* 🧱 Base UI Tokens */
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(0 0% 10%);
+  --border: hsl(0 0% 80%);
+  --input: hsl(0 0% 95%);
+  /* --ring: hsl(210 100% 60%); */
+  --ring: hsl(160, 100%, 40%);
+
+  /* 🟦 Primary */
+  --primary: hsl(210 100% 50%);
+  --primary-foreground: hsl(0 0% 100%);
+
+  /* 🟪 Secondary */
+  --secondary: hsl(270 60% 85%);
+  --secondary-foreground: hsl(270 80% 20%);
+
+  /* 🔴 Destructive */
+  --destructive: hsl(0 85% 60%);
+  --destructive-foreground: hsl(0 100% 95%);
+
+  /* 🎛 Muted */
+  --muted: hsl(0 0% 95%);
+  --muted-foreground: hsl(0 0% 40%);
+
+  /* 🟨 Accent */
+  /* --accent: hsl(40 100% 85%);
+  --accent-foreground: hsl(40 100% 20%); */
+  --accent: hsl(217, 91%, 60%);
+  /* Matches Tailwind text-blue-500 (#3B82F6) */
+  --accent-foreground: hsl(0, 0%, 100%);
+  /* Pure white (#FFFFFF) */
+
+
+  /* 🧩 Popover */
+  --popover: hsl(0 0% 98%);
+  --popover-foreground: hsl(0 0% 20%);
+
+  /* 🗂 Card */
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(0 0% 10%);
+
+  /* 🟦 Radius (optional) */
+  --radius: 0.625rem;
+  /* base */
+
+  --color-portfolio: hsl(var(--chart-3));
 }

@@ -74,7 +74,7 @@ namespace backend.Controllers
         public async Task<IActionResult> Logout()
         {
             //HttpContext.Session.Clear(); // Remove session data
-            await HttpContext.SignOutAsync("SessionAuth"); // ✅ Remove authentication cookie
+            await HttpContext.SignOutAsync("SessionAuth"); // Remove authentication cookie
             HttpContext.User = new ClaimsPrincipal(new ClaimsIdentity());
             return Ok(new { Message = "Logged out successfully" });
         }

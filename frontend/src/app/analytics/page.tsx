@@ -7,6 +7,7 @@ import Loading from "@/components/custom/loader";
 import { useState } from "react";
 import AppHeader from "@/components/custom/appHeader";
 import MaintenancePage from "@/components/custom/maintenanceComponent";
+import AnalyticsPage from "@/components/analytics/analyticsPage";
 
 export default function Analytics(){
     const [isLoading, setIsLoading] = useState(false);
@@ -25,14 +26,15 @@ export default function Analytics(){
 
             {/* Main Content Area */}
             <div className="flex-1">
-                <AppHeader title="Analytics" isMenuOpen={isMenuOpen} />
+                {/* <AppHeader title="Analytics" isMenuOpen={isMenuOpen} /> */}
 
-                <div className="p-6">
+                <div className="px-6 analytics">
                     {/* to center maintenance */}
-                    <div className="flex items-center justify-center w-full h-full">
+                    {/* <div className="flex items-center justify-center w-full h-full">
                         <MaintenancePage />
-                    </div>
-
+                    </div> */}
+                    {/* Analytics Page */}
+                    <AnalyticsPage />
                 </div>
             </div>
         </div>

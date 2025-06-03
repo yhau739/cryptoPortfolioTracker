@@ -28,31 +28,17 @@ export default function Header() {
 
 
                 {/* Desktop Navigation */}
-                <nav className="flex-grow flex justify-start ml-12 space-x-6">
+                <nav className="hidden md:block flex-grow flex justify-start ml-12 space-x-6">
                     {isHomePage ? (
                         <>
-                            <a href="#features" className="text-gray-700 hover:text-blue-700 cursor-pointer">Features</a>
-                            {/* <a href="#" className="text-gray-700 hover:text-blue-700 cursor-pointer">Pricing</a> */}
-                            {/* <a href="#" className="text-gray-700 hover:text-blue-700 cursor-pointer">About</a> */}
-                            <a href="#contactMe" className="text-gray-700 hover:text-blue-700 cursor-pointer">Contact</a>
+                            <Link href="#stats" className="text-gray-700 hover:text-blue-700 cursor-pointer">Stats</Link>
+                            <Link href="#features" className="text-gray-700 hover:text-blue-700 cursor-pointer">Features</Link>
                         </>
                     ) : (
                         <Link href="/" className="hover:text-gray-300 cursor-pointer hidden">
                             Home
                         </Link>
                     )}
-                    {/* <Link href="/">
-                        <span className="text-gray-700 hover:text-blue-700 cursor-pointer">Features</span>
-                    </Link>
-                    <Link href="/">
-                        <span className="text-gray-700 hover:text-blue-700 cursor-pointer">Pricing</span>
-                    </Link>
-                    <Link href="/">
-                        <span className="text-gray-700 hover:text-blue-700 cursor-pointer">About</span>
-                    </Link> */}
-                    {/* <Link href="/contactMe">
-                        <span className="text-gray-700 hover:text-blue-700 cursor-pointer">Contact</span>
-                    </Link> */}
                 </nav>
 
                 {/* Buttons */}
@@ -79,24 +65,31 @@ export default function Header() {
             {isOpen && (
                 <div className="md:hidden bg-white shadow-md absolute top-full left-0 w-full py-4">
                     <nav className="flex flex-col items-center gap-4">
-                        <Link href="/features">
-                            <span className="text-gray-700 hover:text-blue-700 cursor-pointer">Features</span>
+                        {isHomePage ? (
+                            <>
+                                <Link href="/#stats" className="text-gray-700 hover:text-blue-700 cursor-pointer">
+                                    <span className="text-gray-700 hover:text-blue-700 cursor-pointer">Stats</span>
+                                </Link>
+                                <Link href="/#features">
+                                    <span className="text-gray-700 hover:text-blue-700 cursor-pointer">Features</span>
+                                </Link>
+                            </>
+                        ) : (
+                            <Link href="/" className="hover:text-gray-300 cursor-pointer hidden">
+                                Home
+                            </Link>
+                        )}
+
+                        <Link href="/login">
+                            <Button variant="outline" className="border-blue-600 text-blue-600 w-full">
+                                Log In
+                            </Button>
                         </Link>
-                        <Link href="/pricing">
-                            <span className="text-gray-700 hover:text-blue-700 cursor-pointer">Pricing</span>
+                        <Link href="/register">
+                            <Button className="bg-blue-600 hover:bg-blue-700 !rounded-button whitespace-nowrap">
+                                Start Free Trial
+                            </Button>
                         </Link>
-                        <Link href="/about">
-                            <span className="text-gray-700 hover:text-blue-700 cursor-pointer">About</span>
-                        </Link>
-                        <Link href="/contact">
-                            <span className="text-gray-700 hover:text-blue-700 cursor-pointer">Contact</span>
-                        </Link>
-                        <Button variant="outline" className="border-blue-600 text-blue-600 w-full">
-                            Log In
-                        </Button>
-                        <Button className="bg-blue-600 hover:bg-blue-700 !rounded-button whitespace-nowrap">
-                            Start Free Trial
-                        </Button>
                     </nav>
                 </div>
             )}

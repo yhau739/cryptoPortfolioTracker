@@ -19,59 +19,61 @@ import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
 import Feature from "@/components/landing/feature";
 import Hero from "@/components/landing/hero";
-import CTA from "@/components/landing/cta";
+import StatsSection from "@/components/landing/stats";
+import FeaturesSection from "@/components/landing/features";
+import AboutSection from "@/components/landing/about";
 
 export default function Home() {
-  const chartRef = useRef<HTMLDivElement>(null);
-      const [activeDemo, setActiveDemo] = useState(0);
+    const chartRef = useRef<HTMLDivElement>(null);
+    const [activeDemo, setActiveDemo] = useState(0);
 
-      // 🔹 Store floating element positions
-      const [floatingPositions, setFloatingPositions] = useState<{ left: string; top: string; duration: string }[]>([]);
-      useEffect(() => {
-          const generateRandomPositions = () => {
-              return Array.from({ length: 10 }).map(() => ({
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  duration: `${5 + Math.floor(Math.random() * 10)}s`, // Random duration 5s - 15s
-              }));
-          };
+    // 🔹 Store floating element positions
+    const [floatingPositions, setFloatingPositions] = useState<{ left: string; top: string; duration: string }[]>([]);
+    useEffect(() => {
+        const generateRandomPositions = () => {
+            return Array.from({ length: 10 }).map(() => ({
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                duration: `${5 + Math.floor(Math.random() * 10)}s`, // Random duration 5s - 15s
+            }));
+        };
 
-          setFloatingPositions(generateRandomPositions());
-      }, []); // Runs only once after the component mounts
+        setFloatingPositions(generateRandomPositions());
+    }, []); // Runs only once after the component mounts
 
-      useEffect(() => {
-          if (chartRef.current) {
-              const chart = echarts.init(chartRef.current);
-              const option = {
-                  animation: false,
-                  tooltip: {
-                      trigger: 'item'
-                  },
-                  series: [
-                      {
-                          type: 'pie',
-                          radius: ['40%', '70%'],
-                          data: [
-                              { value: 40, name: 'Bitcoin' },
-                              { value: 25, name: 'Ethereum' },
-                              { value: 15, name: 'Cardano' },
-                              { value: 20, name: 'Others' }
-                          ],
-                          emphasis: {
-                              itemStyle: {
-                                  shadowBlur: 10,
-                                  shadowOffsetX: 0,
-                                  shadowColor: 'rgba(0, 0, 0, 0.5)'
-                              }
-                          }
-                      }
-                  ]
-              };
-              chart.setOption(option);
-          }
-      }, []);
-      return (
-          <div>
+    useEffect(() => {
+        if (chartRef.current) {
+            const chart = echarts.init(chartRef.current);
+            const option = {
+                animation: false,
+                tooltip: {
+                    trigger: 'item'
+                },
+                series: [
+                    {
+                        type: 'pie',
+                        radius: ['40%', '70%'],
+                        data: [
+                            { value: 40, name: 'Bitcoin' },
+                            { value: 25, name: 'Ethereum' },
+                            { value: 15, name: 'Cardano' },
+                            { value: 20, name: 'Others' }
+                        ],
+                        emphasis: {
+                            itemStyle: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        }
+                    }
+                ]
+            };
+            chart.setOption(option);
+        }
+    }, []);
+    return (
+        <div>
             <Header />
 
             <div className="min-h-[1024px] bg-gradient-to-b from-white to-blue-50">
@@ -166,6 +168,7 @@ export default function Home() {
                     `}</style>
                 </div> */}
                 <Hero />
+                {/* <AboutSection /> */}
                 {/* Exchange Integration Section */}
                 <div className="py-12 bg-white relative overflow-hidden">
                     <div className="container mx-auto px-4 mb-8 text-center">
@@ -217,108 +220,15 @@ export default function Home() {
     }
     `}</style>
                 </div>
+                {/* Stats Section */}
+                <StatsSection />
                 {/* Features Section */}
-                {/* <div className="py-20 container mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-900 to-blue-600">
-                            Powerful Features
-                        </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Experience a comprehensive suite of tools designed to help you monitor, analyze, and optimize your cryptocurrency investments with confidence and ease.
-                        </p>
-                    </div>
-                    <div className="grid grid-cols-2 gap-8 px-6 mx-6">
-                        {[
-                            {
-                                icon: faChartLine,
-                                title: 'Real-Time Crypto Tracking',
-                                desc: 'Get instant updates on your portfolio with live price feeds from major exchanges'
-                            },
-                            {
-                                icon: faChartPie,
-                                title: 'Profit & Loss Insights',
-                                desc: 'Advanced analytics to track your investment performance and trading history'
-                            },
-                            {
-                                icon: faExchangeAlt,
-                                title: 'Multi-Exchange Compatibility',
-                                desc: 'Support for all major crypto exchanges including Binance, Coinbase, and more'
-                            },
-                            {
-                                icon: faChartBar,
-                                title: 'Interactive Charts',
-                                desc: 'Powerful visualization tools to analyze market trends and portfolio performance'
-                            }
-                        ].map((feature, idx) => (
-                            <Card key={idx} className="p-8 hover:shadow-lg transition-shadow">
-                                <FontAwesomeIcon icon={feature.icon} className="text-4xl text-blue-600 mb-4" />
-                                <h3 className="text-2xl font-semibold mb-3">{feature.title}</h3>
-                                <p className="text-gray-600">{feature.desc}</p>
-                            </Card>
-                        ))}
-                    </div>
-                </div> */}
-                <Feature />
-                {/* How It Works */}
-                <div className="bg-gradient-to-b from-white to-gray-50 py-20">
-                    <div className="container mx-auto px-4">
-                        <h2 className="text-4xl font-bold text-center mb-16">How It Works</h2>
-                        <div className="grid grid-cols-3 gap-12 px-6 mx-3">
-                            {[
-                                {
-                                    step: '1',
-                                    icon: faWallet,
-                                    title: 'Add Your Crypto Assets',
-                                    desc: 'Easily import your portfolio or manually add transactions',
-                                    color: 'from-blue-500 to-blue-600'
-                                },
-                                {
-                                    step: '2',
-                                    icon: faBolt,
-                                    title: 'Get Instant Valuations',
-                                    desc: 'Real-time portfolio tracking with automatic price updates',
-                                    color: 'from-blue-600 to-blue-700'
-                                },
-                                {
-                                    step: '3',
-                                    icon: faChartLine,
-                                    title: 'Analyze & Optimize',
-                                    desc: 'Make informed decisions with comprehensive analytics',
-                                    color: 'from-blue-700 to-blue-800'
-                                }
-                            ].map((step, idx) => (
-                                <div
-                                    key={idx}
-                                    className="relative group bg-white rounded-xl p-8 text-center shadow-lg border border-gray-200 rounded-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
-                                >
-                                    <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-5 rounded-xl transition-opacity duration-300"></div>
-                                    <div className="relative">
-                                        {/* <div className={`w-20 h-20 rounded-[35px] bg-gradient-to-r ${step.color} shadow-[0_8px_16px_rgba(0,0,0,0.1)] flex flex-col items-center justify-center mx-auto mb-8 transform transition-transform duration-300 group-hover:scale-110`}>
-                                            <div className="text-lg font-bold text-white/90 mb-1 drop-shadow-[0_1px_1px_rgba(0,0,0,0.2)]">STEP</div>
-                                            <div className="text-2xl font-bold text-white/90 drop-shadow-[0_1px_1px_rgba(0,0,0,0.2)]">{step.step}</div>
-                                        </div> */}
-                                        <div className="mb-6 py-6">
-                                            <FontAwesomeIcon icon={step.icon} className="fas text-5xl text-blue-600 transform transition-transform duration-300 group-hover:scale-110"/>
-                                        </div>
-                                        <h3 className="text-2xl font-semibold mb-4 text-gray-800">{step.title}</h3>
-                                        <p className="text-gray-600 leading-relaxed">{step.desc}</p>
-                                    </div>
-                                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-b-xl"></div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                    <style jsx>{`
-    .group:hover {
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    }
-    `}</style>
-                </div>
+                <FeaturesSection />
                 {/* CTA */}
-                <CTA />
+
             </div>
 
             <Footer />
-          </div>
-      );
+        </div>
+    );
 }

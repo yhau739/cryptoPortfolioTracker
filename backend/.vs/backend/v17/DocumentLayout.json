@@ -86,15 +86,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
@@ -106,8 +102,7 @@
               "RelativeToolTip": "Controllers\\PingController.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAkwBEAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T07:25:59.073Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-13T07:25:59.073Z"
             },
             {
               "$type": "Document",
@@ -119,8 +114,7 @@
               "RelativeToolTip": "appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-13T09:00:36.023Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T09:00:36.023Z"
             },
             {
               "$type": "Document",
@@ -130,7 +124,7 @@
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\Users\\yeeha\\OneDrive\\Desktop\\DevCT\\cryptoPortfolioTracker\\backend\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-03-10T10:06:25.503Z",
               "EditorCaption": ""
@@ -143,10 +137,9 @@
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\yeeha\\OneDrive\\Desktop\\DevCT\\cryptoPortfolioTracker\\backend\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAnwCMAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAvwCMAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T10:24:22.203Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-10T10:24:22.203Z"
             },
             {
               "$type": "Document",
@@ -158,8 +151,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAFMAAAAAAAAAAAAAAFMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T10:08:12.379Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-10T10:08:12.379Z"
             },
             {
               "$type": "Document",
@@ -171,8 +163,7 @@
               "RelativeToolTip": "Controllers\\TransactionsController.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAEgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T10:09:17.6Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-10T10:09:17.6Z"
             },
             {
               "$type": "Document",
@@ -184,8 +175,7 @@
               "RelativeToolTip": "Controllers\\PnlController.cs",
               "ViewState": "AgIAADcAAAAAAAAAAAAQwEgAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T03:53:32.152Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-11T03:53:32.152Z"
             },
             {
               "$type": "Document",
@@ -197,8 +187,7 @@
               "RelativeToolTip": "Controllers\\BinanceController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T04:09:46.766Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-11T04:09:46.766Z"
             },
             {
               "$type": "Document",
@@ -330,6 +319,10 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-10T10:17:07.684Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }
