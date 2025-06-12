@@ -12,7 +12,6 @@ import { DialogHeader } from "../ui/dialog";
 
 export default function Hero() {
     const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-    // const heroImage = 'https://public.readdy.ai/ai/img_res/1c11beac1e39c140b1500b744dc9a5ef.jpg';
     const heroImage = './hero_image.png';
 
     return (
@@ -37,12 +36,20 @@ export default function Hero() {
                                     <FontAwesomeIcon icon={faPlay} className="fas ml-1 mr-2" /> Watch Demo
                                 </Button>
                             </DialogTrigger>
-                            <DialogContent className="max-w-4xl">
+                            <DialogContent className="w-full max-w-6xl">
                                 <DialogHeader>
                                     <DialogTitle>How CryptoTrack Works</DialogTitle>
                                 </DialogHeader>
                                 <div className="aspect-video bg-gray-100 rounded-lg flex items-center justify-center">
-                                    <span className="text-gray-500">Demo Video Player</span>
+                                    <video
+                                        controls
+                                        className="w-full h-full rounded-lg"
+                                        poster="/videos/video-thumbnail.jpg" // Optional thumbnail
+                                    >
+                                        <source src="/videos/demo.mp4" type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
+
                                 </div>
                             </DialogContent>
                         </Dialog>
